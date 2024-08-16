@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - NextJSGitHub
+name: Build and deploy Node.js app to Azure Web App - NextJS-GitHub
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: yarn install, build
+      - name: npm install, build
         run: |
           npm install
           npm run build
@@ -64,15 +64,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_00A3F53C963A4804A8A08F5EBE60E20B }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_95AAFDE21BC040BA994DB582EBDF00A2 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3C8FB30ABB3340C7929017F7C9296AF1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EFD12532736943A2BB5E8C660899093D }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_02224D0B5F024AE2B71E59CE3EB331FE }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1DC089D590FE4BBE9111792A8AA62610 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'NextJSGitHub'
+          app-name: 'NextJS-GitHub'
           slot-name: 'Production'
           package: .
 
