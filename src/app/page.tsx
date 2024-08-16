@@ -15,7 +15,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By Vedant Kalpesh Patel 3.4 Standalone{" "}
+            By Vedant Kalpesh Patel 3.5 Standalone{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
