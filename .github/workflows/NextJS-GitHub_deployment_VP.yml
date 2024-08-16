@@ -32,7 +32,10 @@ jobs:
           cp -R ./.next/static ./.next/standalone/.next/static
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip ./.next/standalone/*
+        run: |
+          cd ./.next/standalone
+          zip -r ../../release.zip ./*
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
